@@ -94,7 +94,7 @@ namespace CPLibrary
                 dbHandler = new DatabaseMYSQLHandler();
 
 
-                dbHandler.ConnectionString = "Server=localhost;Database=cprovider;Uid=root;Pwd=root";
+                dbHandler.ConnectionString =Properties.Settings.Default.ConnectionString ;// "Server=localhost;Database=cprovider;Uid=root;Pwd=root";
                 dbHandler.ContactTable = "cpanagra";
                 dbHandler.DbName = "cprovider";
                 dbHandler.NomeCampagna = this.NomeCampagna;
