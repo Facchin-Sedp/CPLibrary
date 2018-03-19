@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+ 
 using MySql.Data.MySqlClient;
 
 namespace CPLibrary
@@ -107,19 +107,17 @@ namespace CPLibrary
             MySqlCommand command = new MySqlCommand();
             command.Connection = connection;
 
+            string query = "SELECT COUNT(*) FROM cpanagra an,cpcamp ca WHERE cpa_cpgid =cpg_id and cpg_campag = '" + nomeCampagna + "'";
             try
             {
-                string query = "SELECT COUNT(*) FROM cpanagra WHERE cpa_cpgid ='" + idCampagna + "'";
-                // in funzione del nome campagna
-                //query = @"select count(*) from " + contactTable + " an,cpcamp cm where cm.cpg_campag='"+nomeCampagna+"' and cm.cpg_id=cpa_cpgid";
-
+                
                 command.CommandText = query;
                 command.CommandType = System.Data.CommandType.Text;
 
            
                 Int32 contacts = Convert.ToInt32(command.ExecuteScalar().ToString()); 
 
-                Logger.Instance().WriteTrace(String.Format("COUNTCONTACTS: Number of Contacts in database for Service {0}: {1}", nomeCampagna, contacts));
+                Logger.Instance().WriteTrace(String.Format("COUNTCONTACTS: Number of Contacts in database for Service {0}: {1}", nomeCampagna, contacts + "\n"+ query));
 
                 command.Dispose();
 
@@ -128,7 +126,7 @@ namespace CPLibrary
             catch (Exception e)
             {
                 command = null;
-                Logger.Instance().WriteTrace(String.Format("COUNTCONTACTS: Exception on counting contacts for Service {0}: {1}", nomeCampagna, e.Message));
+                Logger.Instance().WriteTrace(String.Format("COUNTCONTACTS: Exception on counting contacts for Service {0}: {1}", nomeCampagna, e.Message+"\n"+ query));
                 return 0;
             }
         }
@@ -853,7 +851,8 @@ namespace CPLibrary
             }
             catch (Exception e)
             {
-                Logger.Instance().WriteTrace(String.Format("OPEN CONNECTION: Exception on opening database connection - Service {0}: {1}", nomeCampagna, e.Message));
+                Logger.Instance().WriteTrace(String.Format("OPEN CONNECTION: Exception on opening database connection - Service {0}: {1}", nomeCampagna, 
+                    connection.ConnectionString + "\n" + e.Message + "::"+e.InnerException));
                 return false;
             }
         }

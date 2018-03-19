@@ -1,0 +1,92 @@
+[19/03/2018 17:44:00:671] Provider Class Initialize
+[19/03/2018 17:44:01:428] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 17:44:01:435] Init: Fill Dictionary : NetDialerProviderInterface.TDictionary
+[19/03/2018 17:44:01:457] INIT: Exception occured. Closing ContactProvider Istance for Service BIFIS1701C1. Exception text: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)::System.IO.FileLoadException: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)
+Nome file: 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'
+
+=== Informazioni sullo stato di preassociazione ===
+REG: Utente = DELLFAC\andre
+REG: DisplayName = MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+ (Fully-specified)
+REG: Appbase = file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/
+REG: PrivatePath iniziale = NULL
+Assembly chiamante: CPLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+===
+REG: l'associazione ha origine nel contesto di caricamento di default.
+REG: utilizzo del file di configurazione dell'applicazione: D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TestMariaDB\bin\Debug\TestMariaDB.exe.Config
+REG: utilizzo del file di configurazione computer da C:\Windows\Microsoft.NET\Framework\v2.0.50727\config\machine.config.
+REG: trovato reindirizzamento nel file di configurazione dell'applicazione: 6.7.9.0 reindirizzato a 6.8.8.0.
+REG: riferimento post-criteri: MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+REG: tentativo di download del nuovo URL file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/MySql.Data.DLL.
+AVV: errata corrispondenza dal confronto con il nome dell'assembly: numero di versione secondario
+ERR: impossibile completare l'installazione dell'assembly (hr = 0x80131040). Sondaggio terminato.
+
+[19/03/2018 17:46:33:204] Provider Class Initialize
+[19/03/2018 17:46:33:290] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 17:46:33:295] Init: Fill Dictionary : NetDialerProviderInterface.TDictionary
+[19/03/2018 17:46:33:309] INIT: Exception occured. Closing ContactProvider Istance for Service BIFIS1701C1. Exception text: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)::System.IO.FileLoadException: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)
+Nome file: 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'
+
+=== Informazioni sullo stato di preassociazione ===
+REG: Utente = DELLFAC\andre
+REG: DisplayName = MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+ (Fully-specified)
+REG: Appbase = file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/
+REG: PrivatePath iniziale = NULL
+Assembly chiamante: CPLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+===
+REG: l'associazione ha origine nel contesto di caricamento di default.
+REG: utilizzo del file di configurazione dell'applicazione: D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TestMariaDB\bin\Debug\TestMariaDB.exe.Config
+REG: utilizzo del file di configurazione computer da C:\Windows\Microsoft.NET\Framework\v2.0.50727\config\machine.config.
+REG: trovato reindirizzamento nel file di configurazione dell'applicazione: 6.7.9.0 reindirizzato a 6.8.8.0.
+REG: riferimento post-criteri: MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+REG: tentativo di download del nuovo URL file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/MySql.Data.DLL.
+AVV: errata corrispondenza dal confronto con il nome dell'assembly: numero di versione secondario
+ERR: impossibile completare l'installazione dell'assembly (hr = 0x80131040). Sondaggio terminato.
+
+[19/03/2018 17:47:26:083] Provider Class Initialize
+[19/03/2018 17:47:46:064] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 17:47:46:069] Init: Fill Dictionary : NetDialerProviderInterface.TDictionary
+[19/03/2018 17:47:46:081] INIT: Exception occured. Closing ContactProvider Istance for Service BIFIS1701C1. Exception text: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)::System.IO.FileLoadException: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)
+Nome file: 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'
+
+=== Informazioni sullo stato di preassociazione ===
+REG: Utente = DELLFAC\andre
+REG: DisplayName = MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+ (Fully-specified)
+REG: Appbase = file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/
+REG: PrivatePath iniziale = NULL
+Assembly chiamante: CPLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+===
+REG: l'associazione ha origine nel contesto di caricamento di default.
+REG: utilizzo del file di configurazione dell'applicazione: D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TestMariaDB\bin\Debug\TestMariaDB.exe.Config
+REG: utilizzo del file di configurazione computer da C:\Windows\Microsoft.NET\Framework\v2.0.50727\config\machine.config.
+REG: trovato reindirizzamento nel file di configurazione dell'applicazione: 6.7.9.0 reindirizzato a 6.8.8.0.
+REG: riferimento post-criteri: MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+REG: tentativo di download del nuovo URL file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/MySql.Data.DLL.
+AVV: errata corrispondenza dal confronto con il nome dell'assembly: numero di versione secondario
+ERR: impossibile completare l'installazione dell'assembly (hr = 0x80131040). Sondaggio terminato.
+
+[19/03/2018 17:48:23:806] Provider Class Initialize
+[19/03/2018 17:48:27:388] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 17:48:27:394] Init: Fill Dictionary : NetDialerProviderInterface.TDictionary
+[19/03/2018 17:48:27:407] INIT: Exception occured. Closing ContactProvider Istance for Service BIFIS1701C1. Exception text: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)::System.IO.FileLoadException: Impossibile caricare il file o l'assembly 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d' o una delle relative dipendenze. La definizione di manifesto dell'assembly specificato non corrisponde al riferimento all'assembly. (Eccezione da HRESULT: 0x80131040)
+Nome file: 'MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d'
+
+=== Informazioni sullo stato di preassociazione ===
+REG: Utente = DELLFAC\andre
+REG: DisplayName = MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+ (Fully-specified)
+REG: Appbase = file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/
+REG: PrivatePath iniziale = NULL
+Assembly chiamante: CPLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null.
+===
+REG: l'associazione ha origine nel contesto di caricamento di default.
+REG: utilizzo del file di configurazione dell'applicazione: D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TestMariaDB\bin\Debug\TestMariaDB.exe.Config
+REG: utilizzo del file di configurazione computer da C:\Windows\Microsoft.NET\Framework\v2.0.50727\config\machine.config.
+REG: trovato reindirizzamento nel file di configurazione dell'applicazione: 6.7.9.0 reindirizzato a 6.8.8.0.
+REG: riferimento post-criteri: MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d
+REG: tentativo di download del nuovo URL file:///D:/00.WORK/01.SVILUPPO/CSS/Sviluppo/Contact Provider/CPLibrary/TestMariaDB/bin/Debug/MySql.Data.DLL.
+AVV: errata corrispondenza dal confronto con il nome dell'assembly: numero di versione secondario
+ERR: impossibile completare l'installazione dell'assembly (hr = 0x80131040). Sondaggio terminato.
+

@@ -1,0 +1,49 @@
+[19/03/2018 17:56:52:289] Provider Class Initialize
+[19/03/2018 17:56:52:318] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 17:56:52:322] Init: Fill Dictionary : NetDialerProviderInterface.TDictionary
+[19/03/2018 17:56:52:992] SQL Database Handler created
+[19/03/2018 17:56:59:234] OPEN CONNECTION: Database connection opened - Service: BIFIS1701C1
+[19/03/2018 17:56:59:241] COUNTCONTACTS: Number of Contacts in database for Service BIFIS1701C1: 2
+SELECT COUNT(*) FROM cpanagra an,cpcamp ca WHERE cpa_cpgid =cpg_id and cpg_campag = 'BIFIS1701C1'
+[19/03/2018 17:56:59:246] INIT: End - Service BIFIS1701C1
+[19/03/2018 17:56:59:251] COUNTCONTACTS: Number of Contacts in database for Service BIFIS1701C1: 2
+SELECT COUNT(*) FROM cpanagra an,cpcamp ca WHERE cpa_cpgid =cpg_id and cpg_campag = 'BIFIS1701C1'
+[19/03/2018 17:57:10:569] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:10:574] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:10:578] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:10:604] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:22:691] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:22:697] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:22:702] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:22:712] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:24:796] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:24:803] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:24:810] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:24:822] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:29:418] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:29:423] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:29:427] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:29:436] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:29:913] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:29:918] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:29:922] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:29:932] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:30:335] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:30:340] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:30:344] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:30:354] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:30:735] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:30:739] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:30:743] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:30:753] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:31:155] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:31:160] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:31:164] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:57:31:174] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:57:55:893] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:57:58:716] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:57:59:903] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)
+[19/03/2018 17:58:01:773] --> GET CONTACT - Campagna = BIFIS1701C1 - Fallita per errore: Impossibile modificare il nome del DataSet in una stringa vuota.
+[19/03/2018 17:58:24:117] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 17:58:24:122] Stato campagna BIFIS1701C1: True
+[19/03/2018 17:58:24:127] --> GET CONTACT - Campagna BIFIS1701C1 Attiva. Ragione: Attiva(1)

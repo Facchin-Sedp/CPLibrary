@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+ 
 using System.Collections;
 
 namespace CPLibrary
@@ -56,7 +56,7 @@ namespace CPLibrary
         private const string CodOper = "CODOPER";
         private const string OperMode = "OPERMODE";
         private const string Notes = "NOTES";
-
+        private TDictionary dictionary;
 
         private string IdCampagna;
         private string NomeCampagna;
@@ -64,7 +64,24 @@ namespace CPLibrary
         
         private IDatabaseHandler dbHandler;
 
-     
+        private void FillDictionary(TDictionary dic)
+        {
+            dictionary = dic;
+            dictionary.AgentAllocationProperty = AgentAllocationName;
+            dictionary.AgentMandatory = IsAgentMandatory;
+            dictionary.AgentProperty = CodOper;
+            dictionary.BadNumber = BadNumber;
+            dictionary.Busy = Busy;
+            dictionary.Completed = Completed;
+            dictionary.Failed = Failed;
+            dictionary.NoAnswer = NoAnswer;
+            dictionary.ToBeCalled = ToBeCalled;
+            dictionary.OperatorNotAvailable = OperatorNotAvailable;
+            dictionary.ForcedPowerCall = ForcedPowerCall;
+            dictionary.OverrideProperty = OverrideToCompleteName;
+            dictionary.ToBeOverridden = IsToBeOverriddenValue;
+            dictionary.PowerCall = PowerCall;
+        }
 
         public ContactProvider()
         {
@@ -87,7 +104,13 @@ namespace CPLibrary
 
                 this.IdCampagna = IdCampagna;
                 this.NomeCampagna = NomeCampagna;
- 
+
+                FillDictionary(contactStateConstants);
+
+             
+
+                Logger.Instance().WriteTrace(String.Format("Init: Fill Dictionary : {0}", contactStateConstants.ToString()));
+
 
                 //Creation of proper DatabaseHandler, depending on .ini Configuration
 
@@ -96,7 +119,7 @@ namespace CPLibrary
 
                 dbHandler.ConnectionString =Properties.Settings.Default.ConnectionString ;// "Server=localhost;Database=cprovider;Uid=root;Pwd=root";
                 dbHandler.ContactTable = "cpanagra";
-                dbHandler.DbName = "cprovider";
+                dbHandler.DbName = "csfil";
                 dbHandler.NomeCampagna = this.NomeCampagna;
                 dbHandler.IdCampagna = this.IdCampagna;
 
@@ -119,7 +142,7 @@ namespace CPLibrary
             }
             catch (Exception e)
             {
-                Logger.Instance().WriteTrace(string.Format("INIT: Exception occured. Closing ContactProvider Istance for Service {0}. Exception text: {1}", this.NomeCampagna, e.Message));
+                Logger.Instance().WriteTrace(string.Format("INIT: Exception occured. Closing ContactProvider Istance for Service {0}. Exception text: {1}", this.NomeCampagna, e.Message + "::"+e.InnerException));
                 return false;
             }
         }

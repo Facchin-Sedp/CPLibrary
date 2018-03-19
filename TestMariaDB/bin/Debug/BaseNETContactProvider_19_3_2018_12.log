@@ -1,0 +1,44 @@
+[19/03/2018 12:07:08:623] Provider Class Initialize
+[19/03/2018 12:07:08:657] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 12:07:09:797] SQL Database Handler created
+[19/03/2018 12:07:10:453] OPEN CONNECTION: Database connection opened - Service: BIFIS1701C1
+[19/03/2018 12:07:10:499] COUNTCONTACTS: Number of Contacts in database for Service BIFIS1701C1: 2
+[19/03/2018 12:07:10:504] INIT: End - Service BIFIS1701C1
+[19/03/2018 12:07:10:508] COUNTCONTACTS: Number of Contacts in database for Service BIFIS1701C1: 2
+[19/03/2018 12:07:10:515] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 12:07:10:520] Stato campagna BIFIS1701C1: False
+[19/03/2018 12:07:10:527] --> GET CONTACT - Campagna BIFIS1701C1 occupata o inattiva . Ragione: Disattiva(0)
+[19/03/2018 12:07:10:532] Init: Begin - Service : XXXXXXXXXX
+[19/03/2018 12:07:10:537] SQL Database Handler created
+[19/03/2018 12:07:10:603] OPEN CONNECTION: Database connection opened - Service: XXXXXXXXXX
+[19/03/2018 12:07:10:608] COUNTCONTACTS: Number of Contacts in database for Service XXXXXXXXXX: 1
+[19/03/2018 12:07:10:612] INIT: End - Service XXXXXXXXXX
+[19/03/2018 12:07:10:616] COUNTCONTACTS: Number of Contacts in database for Service XXXXXXXXXX: 1
+[19/03/2018 12:07:10:620] Get Contact Inizio campagna XXXXXXXXXX
+[19/03/2018 12:07:10:624] Stato campagna XXXXXXXXXX: False
+[19/03/2018 12:07:10:629] --> GET CONTACT - Campagna XXXXXXXXXX occupata o inattiva . Ragione: Disattiva(0)
+[19/03/2018 12:07:10:634] --> REFRESH DB: Inizio - Campagna: XXXXXXXXXX
+[19/03/2018 12:07:10:746] --> RELOAD DATASET - Refreshed dataset
+[19/03/2018 12:07:10:750] --> REFRESH DB: Fine - Campagna: XXXXXXXXXX
+[19/03/2018 12:07:50:947] Provider Class Initialize
+[19/03/2018 12:07:50:971] Init: Begin - Service : BIFIS1701C1
+[19/03/2018 12:07:51:027] SQL Database Handler created
+[19/03/2018 12:07:51:276] OPEN CONNECTION: Database connection opened - Service: BIFIS1701C1
+[19/03/2018 12:07:51:282] COUNTCONTACTS: Number of Contacts in database for Service BIFIS1701C1: 2
+[19/03/2018 12:07:51:288] INIT: End - Service BIFIS1701C1
+[19/03/2018 12:07:51:292] COUNTCONTACTS: Number of Contacts in database for Service BIFIS1701C1: 2
+[19/03/2018 12:07:51:300] Get Contact Inizio campagna BIFIS1701C1
+[19/03/2018 12:07:51:306] Stato campagna BIFIS1701C1: False
+[19/03/2018 12:07:51:311] --> GET CONTACT - Campagna BIFIS1701C1 occupata o inattiva . Ragione: Disattiva(0)
+[19/03/2018 12:07:51:314] Init: Begin - Service : XXXXXXXXXX
+[19/03/2018 12:07:51:319] SQL Database Handler created
+[19/03/2018 12:07:51:396] OPEN CONNECTION: Database connection opened - Service: XXXXXXXXXX
+[19/03/2018 12:07:51:401] COUNTCONTACTS: Number of Contacts in database for Service XXXXXXXXXX: 1
+[19/03/2018 12:07:51:405] INIT: End - Service XXXXXXXXXX
+[19/03/2018 12:07:51:410] COUNTCONTACTS: Number of Contacts in database for Service XXXXXXXXXX: 1
+[19/03/2018 12:07:51:415] Get Contact Inizio campagna XXXXXXXXXX
+[19/03/2018 12:07:51:421] Stato campagna XXXXXXXXXX: False
+[19/03/2018 12:07:51:425] --> GET CONTACT - Campagna XXXXXXXXXX occupata o inattiva . Ragione: Disattiva(0)
+[19/03/2018 12:07:51:431] --> REFRESH DB: Inizio - Campagna: XXXXXXXXXX
+[19/03/2018 12:07:51:453] --> RELOAD DATASET - Refreshed dataset
+[19/03/2018 12:07:51:459] --> REFRESH DB: Fine - Campagna: XXXXXXXXXX

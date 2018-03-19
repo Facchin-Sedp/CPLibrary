@@ -1,0 +1,14 @@
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\TEST.exe.config
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\TEST.exe
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\TEST.pdb
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\CPLibrary.dll
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\NetDialerProviderInterface.dll
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\Messaging.dll
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\MySql.Data.dll
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\CPLibrary.pdb
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\bin\Debug\CPLibrary.dll.config
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\obj\Debug\TEST.csprojResolveAssemblyReference.cache
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\obj\Debug\TEST.csproj.CoreCompileInputs.cache
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\obj\Debug\TEST.csproj.CopyComplete
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\obj\Debug\TEST.exe
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\TEST\obj\Debug\TEST.pdb

@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using CPLibrary;
 using Phones.Messaging;
 using NetDialerProviderInterface;
-using System.Diagnostics;
 using System.Collections;
-using System.Threading;
+using CPLibrary;
 
 namespace TestMariaDB
 {
@@ -33,12 +28,12 @@ namespace TestMariaDB
 
             Campagna(cp, dic, ref callMode, ref eof, CcData, phoneNums);
 
-            CampagnaId = "3";
-            NomeCampagna = "XXXXXXXXXX";
+            //CampagnaId = "3";
+            //NomeCampagna = "XXXXXXXXXX";
 
-            Campagna(cp, dic, ref callMode, ref eof, CcData, phoneNums);
+            //Campagna(cp, dic, ref callMode, ref eof, CcData, phoneNums);
 
-            cp.RefreshDB();
+            //cp.RefreshDB();
         }
 
         private static void Campagna(ContactProvider cp, TDictionary dic, ref string callMode, ref bool eof, PhonesCallData CcData, ArrayList phoneNums)
