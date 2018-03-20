@@ -22,3 +22,4 @@ D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\CPLibrary\obj\Deb
 D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\CPLibrary\obj\Debug\CPLibrary.csproj.CopyComplete
 D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\CPLibrary\bin\Debug\Messaging.dll
 D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\CPLibrary\bin\Debug\NetDialerProviderInterface.dll
+D:\00.WORK\01.SVILUPPO\CSS\Sviluppo\Contact Provider\CPLibrary\CPLibrary\obj\Debug\CPLibrary.csprojResolveAssemblyReference.cache

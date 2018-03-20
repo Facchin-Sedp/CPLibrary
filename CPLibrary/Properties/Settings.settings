@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=localhost;Database=cprovider;Uid=root;Pwd=root</Value>
+      <Value Profile="(Default)">Server=168.100.100.76;Database=csfil;Uid=csfil;Pwd=S1.fa</Value>
     </Setting>
   </Settings>
 </SettingsFile>

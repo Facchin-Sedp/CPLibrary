@@ -271,8 +271,8 @@ namespace CPLibrary
 
                             Debug.WriteLine("Setto come Anagrafica " + NomeContatto + "come 9 - Occupata");
                             Blocco_Anagrafica(ID_Anagrafica, 9, contactCallData, numPho, curPho);// devo mettere 9 in lavorazione cpa_calsts=9 e incrementare il numero per allinearlo a questo che sto chiamando
-                            /////
-
+                                                                                                 /////
+                            eof = false;
                             return true;
                         }
 
@@ -281,10 +281,11 @@ namespace CPLibrary
 
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna = {0} - Fine o Nessun Records: EOF imposto Campagna come 2-Chiusa", nomeCampagna));
                         Debug.WriteLine("Ho terminato la campagna"+nomeCampagna+" 2-chiusa");
-                        update_Campagna_Status(2, idCampagna);// 2-chiudo campagna id perchè non ho più numeri da contattare
+                        update_Campagna_Status(2, nomeCampagna);// 2-chiudo campagna id perchè non ho più numeri da contattare
                         
 
-                        eof = true;
+                        eof = true; 
+
                         return false;
                          
                        
@@ -335,6 +336,7 @@ namespace CPLibrary
                 Debug.WriteLine("Errore generico Campagna");
                 Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna = {0} - Errore generico", nomeCampagna));
                 eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+              
                 return false;
 
             }
@@ -498,13 +500,13 @@ namespace CPLibrary
 
 
 
-        private void update_Campagna_Status(Int32 stato, string Id_Campagna)
+        private void update_Campagna_Status(Int32 stato, string nomeCampagna)
         {
             // aggiorno a 2-completata la campagna
             string query = @"
                             update cpcamp set  cpg_status=" + stato.ToString() + @"
                             where
-                            cpg_id=" + Id_Campagna;
+                            cpg_campag='" + nomeCampagna+"'";
 
             Logger.Instance().WriteTrace("--> UPDATE CAMPAGNA STATUS - Query:\n" + query);
             Debug.WriteLine("Query UPDATE CAMPAGNA:\n" + query+"\n-------------------\n");      
