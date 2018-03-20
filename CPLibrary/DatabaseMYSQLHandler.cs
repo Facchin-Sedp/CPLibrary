@@ -722,11 +722,11 @@ namespace CPLibrary
                 res.ReturnStatus = status;
                 res.DescStatus = "Attiva";
             }
-            else
+            else if (status == 2)
             {
                 res.isActive = false;
                 res.ReturnStatus = status;
-                res.DescStatus = "Stato sconosciuto - Disattivo Campagna";
+                res.DescStatus = "Fine - Disattivo Campagna";
             }
             rd.Close();// chiudo il datareader
             return res;
