@@ -15,7 +15,7 @@ namespace CPLibrary
     public class ContactProvider : IProviderInterface
     {
 
-        private const string IniPath = "CPConfig.ini";
+      
         //Contact Status Constants
 
         private const string ToBeCalled = "0";
@@ -91,7 +91,7 @@ namespace CPLibrary
 
             Logger.Instance().WriteTrace(String.Format("Provider Class Initialize"));
           
-            INIReader.Instance().IniPath = AppDomain.CurrentDomain.BaseDirectory + IniPath;
+          
 
         }
     

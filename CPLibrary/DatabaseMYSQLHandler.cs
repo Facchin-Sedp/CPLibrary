@@ -160,7 +160,7 @@ namespace CPLibrary
                 
 
                 statoCampagna stsCampagna = determina_stato_Campagna();
-                Logger.Instance().WriteTrace(String.Format("Stato campagna "+ nomeCampagna+": " + stsCampagna.isActive.ToString()));
+                Logger.Instance().WriteTrace(String.Format("-> GET CONTACT - Stato campagna " + nomeCampagna+": " + stsCampagna.isActive.ToString()));
                 // se attiva allora faccio la scansione delle anagrafiche relative oppure ricarico il dataset se nuova
                 if (stsCampagna.isActive)
                 {
@@ -263,7 +263,7 @@ namespace CPLibrary
 
                             /////
 
-                            Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna = {0} - CALL DATA {1}", nomeCampagna, contactCallData.ToString()));
+                            Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna = {0} - CALL DATA {1}", nomeCampagna, contactCallData.ToString() + "\nNUMERO CORRENTE:" + phoneNumbers[0]));
 
 
                             ////////////// METTO LO STATO IN LAVORAZIONE
@@ -306,7 +306,7 @@ namespace CPLibrary
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna " + nomeCampagna + " disattiva. Ragione: "
                             + stsCampagna.DescStatus + "(" + stsCampagna.ReturnStatus.ToString() + ")"));
 
-                        eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+                       // eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
                         return false;
                     }
                     else if (stsCampagna.ReturnStatus == 8)
@@ -316,7 +316,7 @@ namespace CPLibrary
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna " + nomeCampagna + " bloccata. Ragione: "
                             + stsCampagna.DescStatus + "(" + stsCampagna.ReturnStatus.ToString() + ")"));
 
-                        eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+                      //  eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
                         return false;
 
 
@@ -328,7 +328,7 @@ namespace CPLibrary
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna " + nomeCampagna + " occupata o inattiva . Ragione: "
                             + stsCampagna.DescStatus + "(" + stsCampagna.ReturnStatus.ToString() + ")"));
 
-                        eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+                     //   eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
                         return false;
 
                     }
@@ -394,9 +394,9 @@ namespace CPLibrary
                 //RefreshDB works on the main DataSet. We clear the DataSet and we refill it
                 Logger.Instance().WriteTrace(String.Format("--> REFRESH DB: Inizio - Campagna: {0}", nomeCampagna));
 
-                
 
-                databaseRefreshed = ricarico_Dataset();// ritorna true o false
+
+                databaseRefreshed = true;// ricarico_Dataset();// ritorna true o false
 
                 Logger.Instance().WriteTrace(String.Format("--> REFRESH DB: Fine - Campagna: {0}", nomeCampagna));
             }
@@ -480,6 +480,7 @@ namespace CPLibrary
             {
                 dataAdapter.Fill(dataSet, contactTable);
                 dataSetEnumerator = (IEnumerator)dataSet.Tables[contactTable].Rows.GetEnumerator();
+
             }
             catch (Exception ex)
             {
@@ -529,7 +530,23 @@ namespace CPLibrary
         {
             Logger.Instance().WriteTrace("--> UPDATE CPPHONE - Campagna:" + nomeCampagna + " - Aggiorno tabella CpPhone con stato della call porto anvanti conteggio tentativi al telefono numero " + contactCallData.Collection[NUM_PHO]);
             Debug.WriteLine("Aggiorno tabella CpPhone con stato della call porto anvanti conteggio tentativi al telefono numero " + contactCallData.Collection[NUM_PHO]);
+
             String CallStatus = contactStatus;
+            String CenStatus =  contactStatus  ;
+            //            private const string ToBeCalled = "0";
+            //private const string Busy = "1";
+            //private const string NoAnswer = "2";
+            //private const string BadNumber = "3";
+            //private const string Failed = "4";
+            //private const string Completed = "5";
+            //private const string OperatorNotAvailable = "6";
+            //private const string InProcess = "9";
+            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable)
+                CallStatus = "3";
+            else
+                CallStatus = "2";
+
+
 
             // -Update CPPhones aggiornando i due campi stato: cpp_censts(con call status ricevuto dal metodo setContact) 
             // + cpp_calsts(calcolato in base allo status);
@@ -570,13 +587,27 @@ namespace CPLibrary
 
             //- Update CPCalls con le info restituite dal Dialer, compilando, in caso di risposta,
             //anche i campi ora fine chiamata e durata in secondi. Inoltre, se presente nel calldata il campo Agent, imposta il valore in cpl_agent
+            String CallStatus = contactStatus;
+            String CenStatus = contactStatus;
+            //            private const string ToBeCalled = "0";
+            //private const string Busy = "1";
+            //private const string NoAnswer = "2";
+            //private const string BadNumber = "3";
+            //private const string Failed = "4";
+            //private const string Completed = "5";
+            //private const string OperatorNotAvailable = "6";
+            //private const string InProcess = "9";
+            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable)
+                CallStatus = "3";
+            else
+                CallStatus = "2";
 
             Logger.Instance().WriteTrace("--> UPDATE CPCALLS - Campagna:" + nomeCampagna);
             String oraEnd = DateTime.Now.ToString("HHmmss");
             MySqlCommand cmd = new MySqlCommand();
 
             string query = @"
-                            update cpCalls set  cpl_calsts=@cntStatus,cpl_censts=@cntStatus,cpl_oraend='" + oraEnd + @"',
+                            update cpcalls set  cpl_calsts=@CallStatus,cpl_censts=@CenStatus,cpl_oraend='" + oraEnd + @"',
                             cpl_caldur =((substr('" + oraEnd + @"',1,2)*3600)+(substr('" + oraEnd + @"',3,2)*60)+substr('" + oraEnd + @"',5,2))
                             -((substr(cpl_oracall,1,2)*3600)+(substr(cpl_oracall,3,2)*60)+substr(cpl_oracall,5,2)),
                             cpl_Agent=@agente
@@ -584,7 +615,8 @@ namespace CPLibrary
                             cpl_cpaid=" + contactCallData.Collection[ID_CPA] +" and cpl_numpho="+contactCallData[CUR_PHO]+" and cpl_caldur is null";
 
 
-            cmd.Parameters.Add("@cntStatus", MySqlDbType.Int32).Value = Convert.ToInt32(contactStatus);
+            cmd.Parameters.Add("@CallStatus", MySqlDbType.Int32).Value = Convert.ToInt32(CallStatus);
+            cmd.Parameters.Add("@CenStatus", MySqlDbType.Int32).Value = Convert.ToInt32(CenStatus);
             cmd.Parameters.Add("@agente", MySqlDbType.String).Value = "";
 
             cmd.Connection = connection;
@@ -729,6 +761,11 @@ namespace CPLibrary
                 res.DescStatus = "Fine - Disattivo Campagna";
             }
             rd.Close();// chiudo il datareader
+
+
+            Logger.Instance().WriteTrace(String.Format("-> CHECK STATUS SERVICE - Stato campagna " + nomeCampagna + ": " + status + "\n" + query));
+
+
             return res;
         }
 
