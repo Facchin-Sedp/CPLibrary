@@ -46,6 +46,8 @@ namespace CPLibrary
         private const string NUM_PHO = "numpho";
         private const string CUR_PHO = "curpho";
         private const string MAXCALL = "cpg_maxcall";
+        private const string RIFTER = "cpa_rifter";
+        private const string RIFPRA = "cpa_rifpra";
 
         private const string Denominazione = "cpa_nome";
       
@@ -150,6 +152,8 @@ namespace CPLibrary
                 Int32 ID_Anagrafica = 0;//locale
                 Int32 numPho = 0;
                 Int32 curPho = 0;
+                String rifTer = String.Empty;
+                String rifPra = String.Empty;
 
                 string NomeContatto = "";              
                 string NumeroTelCorrente = "";
@@ -175,7 +179,7 @@ namespace CPLibrary
 
                     string query = @"
                                         SELECT 
-                                            cpg_id,cpa_id,cpa_nome,cpp_phonum,cpa_calsts,cpa_numpho,cpa_curpho+1 
+                                            cpg_id,cpa_id,cpa_nome,cpp_phonum,cpa_calsts,cpa_numpho,cpa_curpho+1 ,cpa_rifter,cpa_rifpra
                                         from cpanagra an,cpcamp cm ,cpphones ph
                                         WHERE 
                                             cpg_campag='"+ nomeCampagna + @"'
@@ -229,7 +233,8 @@ namespace CPLibrary
                             if (currentRow[4] != DBNull.Value) statoCall = currentRow[4].ToString();
                             if (currentRow[5] != DBNull.Value) numPho = Convert.ToInt32(currentRow[5]);
                             if (currentRow[6] != DBNull.Value) curPho = Convert.ToInt32(currentRow[6]);
-
+                            if (currentRow[5] != DBNull.Value) rifTer =  currentRow[7].ToString();
+                            if (currentRow[6] != DBNull.Value) rifPra =  currentRow[8].ToString();
 
 
                             //Filling CallData i dati di chi chiamo servono per la phone bar
@@ -240,7 +245,8 @@ namespace CPLibrary
                             contactCallData.Add(OperMode, operMode);
                             contactCallData.Add(NUM_PHO, numPho.ToString());
                             contactCallData.Add(CUR_PHO, curPho.ToString());
-                            
+                            contactCallData.Add(RIFTER, rifTer);
+                            contactCallData.Add(RIFPRA, rifPra);
 
                             recordString = "CHIAMATA:"
                                 + "\nID Anagrafica: "+ID_Anagrafica.ToString() 
