@@ -233,8 +233,8 @@ namespace CPLibrary
                             if (currentRow[4] != DBNull.Value) statoCall = currentRow[4].ToString();
                             if (currentRow[5] != DBNull.Value) numPho = Convert.ToInt32(currentRow[5]);
                             if (currentRow[6] != DBNull.Value) curPho = Convert.ToInt32(currentRow[6]);
-                            if (currentRow[5] != DBNull.Value) rifTer =  currentRow[7].ToString();
-                            if (currentRow[6] != DBNull.Value) rifPra =  currentRow[8].ToString();
+                            if (currentRow[7] != DBNull.Value) rifTer =  currentRow[7].ToString();
+                            if (currentRow[8] != DBNull.Value) rifPra =  currentRow[8].ToString();
 
 
                             //Filling CallData i dati di chi chiamo servono per la phone bar
