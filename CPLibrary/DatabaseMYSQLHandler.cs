@@ -273,9 +273,9 @@ namespace CPLibrary
 
 
                             ////////////// METTO LO STATO IN LAVORAZIONE
-                            Logger.Instance().WriteTrace("Setto come Anagrafica " + NomeContatto + "come 9 - Occupata");
+                            Logger.Instance().WriteTrace("Setto come Anagrafica " + NomeContatto + " come 9 - Occupata");
 
-                            Debug.WriteLine("Setto come Anagrafica " + NomeContatto + "come 9 - Occupata");
+                            Debug.WriteLine("Setto come Anagrafica " + NomeContatto + " come 9 - Occupata");
                             Blocco_Anagrafica(ID_Anagrafica, 9, contactCallData, numPho, curPho);// devo mettere 9 in lavorazione cpa_calsts=9 e incrementare il numero per allinearlo a questo che sto chiamando
                                                                                                  /////
                             eof = false;
@@ -312,7 +312,7 @@ namespace CPLibrary
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna " + nomeCampagna + " disattiva. Ragione: "
                             + stsCampagna.DescStatus + "(" + stsCampagna.ReturnStatus.ToString() + ")"));
 
-                       // eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+                        eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
                         return false;
                     }
                     else if (stsCampagna.ReturnStatus == 8)
@@ -322,7 +322,7 @@ namespace CPLibrary
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna " + nomeCampagna + " bloccata. Ragione: "
                             + stsCampagna.DescStatus + "(" + stsCampagna.ReturnStatus.ToString() + ")"));
 
-                      //  eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+                        eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
                         return false;
 
 
@@ -334,7 +334,7 @@ namespace CPLibrary
                         Logger.Instance().WriteTrace(String.Format("--> GET CONTACT - Campagna " + nomeCampagna + " occupata o inattiva . Ragione: "
                             + stsCampagna.DescStatus + "(" + stsCampagna.ReturnStatus.ToString() + ")"));
 
-                     //   eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
+                        eof = true;// blocco la campagna ma non aggiorno il suo stato di campagna finita 2
                         return false;
 
                     }
@@ -539,7 +539,7 @@ namespace CPLibrary
 
             String CallStatus = contactStatus;
             String CenStatus =  contactStatus  ;
-            //            private const string ToBeCalled = "0";
+            //private const string ToBeCalled = "0";
             //private const string Busy = "1";
             //private const string NoAnswer = "2";
             //private const string BadNumber = "3";
@@ -547,7 +547,7 @@ namespace CPLibrary
             //private const string Completed = "5";
             //private const string OperatorNotAvailable = "6";
             //private const string InProcess = "9";
-            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable)
+            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable || CenStatus == NoAnswer)
                 CallStatus = "3";
             else
                 CallStatus = "2";
@@ -595,7 +595,7 @@ namespace CPLibrary
             //anche i campi ora fine chiamata e durata in secondi. Inoltre, se presente nel calldata il campo Agent, imposta il valore in cpl_agent
             String CallStatus = contactStatus;
             String CenStatus = contactStatus;
-            //            private const string ToBeCalled = "0";
+            //private const string ToBeCalled = "0";
             //private const string Busy = "1";
             //private const string NoAnswer = "2";
             //private const string BadNumber = "3";
@@ -603,7 +603,7 @@ namespace CPLibrary
             //private const string Completed = "5";
             //private const string OperatorNotAvailable = "6";
             //private const string InProcess = "9";
-            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable)
+            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable || CenStatus == NoAnswer)
                 CallStatus = "3";
             else
                 CallStatus = "2";
@@ -645,6 +645,24 @@ namespace CPLibrary
 
         private Boolean UpdateCPAnagra(PhonesCallData contactCallData, string contactStatus)
         {
+
+            //anche i campi ora fine chiamata e durata in secondi. Inoltre, se presente nel calldata il campo Agent, imposta il valore in cpl_agent
+            String CallStatus = contactStatus;
+            String CenStatus = contactStatus;
+            //            private const string ToBeCalled = "0";
+            //private const string Busy = "1";
+            //private const string NoAnswer = "2";
+            //private const string BadNumber = "3";
+            //private const string Failed = "4";
+            //private const string Completed = "5";
+            //private const string OperatorNotAvailable = "6";
+            //private const string InProcess = "9";
+            if (CenStatus == Busy || CenStatus == BadNumber || CenStatus == Failed || CenStatus == OperatorNotAvailable || CenStatus == NoAnswer)
+                CallStatus = "3";
+            else
+                CallStatus = "2";
+
+
             Logger.Instance().WriteTrace("--> UPDATE CPANAGRA - Campagna:" + nomeCampagna);
             Int32 numPho = Convert.ToInt32(contactCallData.Collection[NUM_PHO]);
             Int32 curPho = Convert.ToInt32(contactCallData.Collection[CUR_PHO]);
@@ -659,7 +677,7 @@ namespace CPLibrary
 
 
 
-            if (contactStatus == "3")// 2-OK quindi se è 3-KO
+            if (CallStatus == "3")// 2-OK quindi se è 3-KO
             {   // cpa_numpty=0
                 Logger.Instance().WriteTrace("--> UPDATE CPANAGRA - Campagna:" + nomeCampagna+" - tentativo fallito 3-KO verifico se ho altri numeri oppure devo settare 3-KO definitivamente l'anagrafica");
                 Debug.WriteLine("tentativo fallito 3-KO verifico se ho altri numeri oppure devo settare 3-KO");
