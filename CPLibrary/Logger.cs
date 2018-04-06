@@ -23,7 +23,7 @@ namespace CPLibrary
             _fileStream = null;
             _outputFile = null;
             string currentTime = DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() + "_" + DateTime.Now.Year.ToString()+"_"+ DateTime.Now.Hour.ToString();
-            _logFilePath = AppDomain.CurrentDomain.BaseDirectory + "BaseNETContactProvider_" + currentTime + ".log";
+            _logFilePath = AppDomain.CurrentDomain.BaseDirectory + "CpLibrary_" + currentTime + ".log";
         }
 
         public static Logger Instance()
@@ -53,6 +53,13 @@ namespace CPLibrary
                         dateTime.Millisecond.ToString("d3");
 
                     string traceWithDate = String.Format("[{0} {1}] {2}", dateNow, timeNow, trace);
+
+                    //// creo il file ogni ORA
+                    string currentTime = DateTime.Now.Day.ToString() + "_" + DateTime.Now.Month.ToString() 
+                        + "_" + DateTime.Now.Year.ToString() + "_" + DateTime.Now.Hour.ToString();
+
+                    _logFilePath = AppDomain.CurrentDomain.BaseDirectory + "CpLibrary_" + currentTime + ".log";
+                    ////
 
                     if (File.Exists(_logFilePath))
                     {
