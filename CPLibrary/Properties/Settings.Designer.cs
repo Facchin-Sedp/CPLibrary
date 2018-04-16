@@ -25,7 +25,7 @@ namespace CPLibrary.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=168.100.100.76;Database=csfil;Uid=csfil;Pwd=S1.fa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=168.100.100.5;Database=csfil;Uid=csfil;Pwd=S1.fa")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
